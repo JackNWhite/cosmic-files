@@ -2705,9 +2705,11 @@ impl Item {
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Deserialize, Serialize)]
 pub enum View {
+    Compact,
     Grid,
     List,
 }
+
 #[derive(Clone, Copy, Debug, Hash, PartialEq, PartialOrd, Ord, Eq, Deserialize, Serialize)]
 pub enum HeadingOptions {
     Name = 0,
