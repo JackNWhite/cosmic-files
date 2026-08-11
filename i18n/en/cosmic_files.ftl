@@ -377,6 +377,7 @@ zoom-out = Zoom out
 view = View
 grid-view = Grid view
 list-view = List view
+compact-view = Compact View
 show-hidden-files = Show hidden files
 list-directories-first = List directories first
 gallery-preview = Gallery preview
