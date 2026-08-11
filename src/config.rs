@@ -22,6 +22,7 @@ pub const CONFIG_VERSION: u64 = 1;
 pub const ICON_SIZE_LIST: u16 = 32;
 pub const ICON_SIZE_LIST_CONDENSED: u16 = 48;
 pub const ICON_SIZE_GRID: u16 = 64;
+pub const ICON_SIZE_COMPACT: u16 = 24;
 // TODO: 5 is an arbitrary number. Maybe there's a better icon size max
 pub const ICON_SCALE_MAX: u16 = 5;
 
@@ -353,6 +354,7 @@ impl Default for TabConfig {
 pub struct IconSizes {
     pub list: NonZeroU16,
     pub grid: NonZeroU16,
+    pub compact: NonZeroU16,
 }
 
 impl Default for IconSizes {
@@ -360,6 +362,7 @@ impl Default for IconSizes {
         Self {
             list: 100.try_into().unwrap(),
             grid: 100.try_into().unwrap(),
+            compact: 100.try_into().unwrap(),
         }
     }
 }
@@ -375,6 +378,10 @@ impl IconSizes {
 
     pub fn grid(&self) -> u16 {
         percent!(self.grid, ICON_SIZE_GRID) as _
+    }
+
+    pub fn compact(&self) -> u16 {
+        percent!(self.compact, ICON_SIZE_GRID) as _
     }
 }
 
